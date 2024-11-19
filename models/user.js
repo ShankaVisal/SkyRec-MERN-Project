@@ -46,35 +46,3 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model("users",userSchema)
 
 export default User
-
-
-// import mongoose from "mongoose"
-
-// const userSchema = mongoose.Schema({
-//     email: {
-//          type : String,
-//          required : true,
-//          unique : true
-//     },
-//     firstName:{
-//          type : String
-//     },
-//     llastName:{
-//          type: String
-//     },
-//     img:{
-//          type : String,
-//          default : "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg"
-//     },
-//     password:{
-//          type: String,
-//          required : true
-//     },
-//     phone: {
-//          type : Number
-//     }
-// })
-
-// const User = mongoose.model("users", userSchema)
-
-// export default User

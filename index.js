@@ -4,6 +4,7 @@ import userRouter from "./routes/userRoutes.js";
 import mongoose from "mongoose";
 import galleryItemRouter from "./routes/galleryItemRoute.js";
 import jwt, { decode } from "jsonwebtoken";
+import categoryRouter from "./routes/categoryRoute.js";
 
 const app = express()
 
@@ -26,7 +27,7 @@ app.use((req, res, next) => {
                 req.user = decoded
                 next()
             }else{
-                next
+                next()
             }
     
 
@@ -41,6 +42,7 @@ app.use((req, res, next) => {
 
 app.use('/api/users', userRouter)
 app.use('/api/gallery',galleryItemRouter)
+app.use('/api/category', categoryRouter)
 
 
 
