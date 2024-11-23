@@ -133,3 +133,33 @@ export function getCategoryByName(req,res){
         }
     )
 }
+
+export function updateCategory(req, res){
+    if(!req.user){
+        res.status(401).json({
+            message: "Please Login to update a category"
+        })
+        return
+    }
+    if(req.user.type !== "admin"){
+        res.status(404).json({
+            message: "You do not have a permission to update a category"
+        })
+        return
+    }
+
+    const categoryName = req.params.name;
+    Category.updateOne({name:categoryName},req.body).then(
+        ()=>{
+            res.json({
+                message: "Category updated successfully"
+            })
+        }
+    ).catch(
+        ()=>{
+            res.json({
+                message: "faild to update Category"
+            })
+        }
+    )
+}

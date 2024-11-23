@@ -6,6 +6,7 @@ import galleryItemRouter from "./routes/galleryItemRoute.js";
 import jwt, { decode } from "jsonwebtoken";
 import categoryRouter from "./routes/categoryRoute.js";
 import dotenv from "dotenv";
+import roomeRoute from "./routes/roomRoute.js";
 dotenv.config()
 
 const app = express()
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 app.use('/api/users', userRouter)
 app.use('/api/gallery',galleryItemRouter)
 app.use('/api/category', categoryRouter)
+app.use('/api/rooms', roomeRoute)
 
 
 
