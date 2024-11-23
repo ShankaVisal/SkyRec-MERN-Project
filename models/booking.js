@@ -7,7 +7,7 @@ const bookingSchema = mongoose.Schema({
         unique: true
     },
     roomId:{
-        type:String,
+        type: String,
         required: true
     },
     email: {
@@ -34,6 +34,10 @@ const bookingSchema = mongoose.Schema({
     notes: {
         type: String,
         default: ""
+    },
+    timeStamp: {
+        type: Date,
+        default : Date.now
     }
 })
 

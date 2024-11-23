@@ -7,6 +7,7 @@ import jwt, { decode } from "jsonwebtoken";
 import categoryRouter from "./routes/categoryRoute.js";
 import dotenv from "dotenv";
 import roomeRoute from "./routes/roomRoute.js";
+import bookingRouter from "./routes/bookingRoute.js";
 dotenv.config()
 
 const app = express()
@@ -48,6 +49,7 @@ app.use('/api/users', userRouter)
 app.use('/api/gallery',galleryItemRouter)
 app.use('/api/category', categoryRouter)
 app.use('/api/rooms', roomeRoute)
+app.use('/api/bookings', bookingRouter)
 
 
 
