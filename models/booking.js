@@ -36,3 +36,7 @@ const bookingSchema = mongoose.Schema({
         default: ""
     }
 })
+
+const Booking = mongoose.model("bookings",bookingSchema)
+
+export default Booking
