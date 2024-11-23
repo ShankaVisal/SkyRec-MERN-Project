@@ -14,9 +14,11 @@ export function postUsers(req, res) {
      user.password = hashPassword;
 
      const newUser = new User(user)
-     newUser.save().then(() => {
-          res.json({
-               message: "user created sucessfully"
+     newUser.save().then(
+          (result) => {
+               res.json({
+                    message: "user created sucessfully",
+                    result : result
           })
      }).catch(() => {
           res.json({
